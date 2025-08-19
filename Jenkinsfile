@@ -4,7 +4,7 @@ pipeline{
         label 'AGENT-1'
     }
     environment {
-        COURSE = 'jenkins'
+        COURSE = 'Jenkins'
     }
     stages {
         stage('Build'){
