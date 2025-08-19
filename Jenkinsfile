@@ -21,9 +21,38 @@ pipeline{
         choice(name: 'CHOICE', choices: ['One', 'Two', 'Three'], description: 'Pick something')
         password(name: 'PASSWORD', defaultValue: 'SECRET', description: 'Enter a password')
     }
-    when {
-        branch 'production'
+    // when {
+    //     branch 'production'
+    // }
+    stages {
+        stage('Build') {
+            steps {
+                echo "Building on ${env.BRANCH_NAME}"
+            }
+        }
+
+        stage('Deploy to Prod') {
+            when {
+                branch 'production'   // ✅ Only run this stage if branch is production
+            }
+            steps {
+                echo "Deploying to Production!"
+                sh './deploy-prod.sh'
+            }
+        }
+
+        stage('Deploy to Dev') {
+            when {
+                branch 'develop'      // ✅ Only run this stage if branch is develop
+            }
+            steps {
+                echo "Deploying to Dev!"
+                sh './deploy-dev.sh'
+            }
+        }
     }
+}
+
     stages {
         stage('Build '){
             input {
