@@ -47,5 +47,5 @@ post {
 
 }
 
-/*# Refer this url https://github.com/DAWS-82S/jenkins-practice/blob/main/Jenkinsfile  */
+// /*# Refer this url https://github.com/DAWS-82S/jenkins-practice/blob/main/Jenkinsfile  */
 
