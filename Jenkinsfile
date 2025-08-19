@@ -36,7 +36,12 @@ post {
         echo 'I will always say Hello again!'
         deleteDir()
     }
-    failure
+    failure {
+        echo 'Hello Failure'
+    }
+    success {
+        echo 'Hello Success'
+    }
 }
 
 }
