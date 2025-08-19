@@ -1,5 +1,7 @@
 pipeline{
-    agent any
+    agent {
+        label 'AGENT-1'
+    }
     stages {
         stage('Build'){
             steps{
@@ -29,4 +31,15 @@ pipeline{
             }
         }
     }
+post {
+    always {
+        echo 'I will always say Hello again!'
+        deleteDir()
+    }
+    failure
 }
+
+}
+
+/*# Refer this url https://github.com/DAWS-82S/jenkins-practice/blob/main/Jenkinsfile  */
+
