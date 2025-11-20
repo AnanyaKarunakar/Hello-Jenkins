@@ -1,5 +1,5 @@
 pipeline {
-    agent {
+    agent any {
         label 'AGENT-1'
     }
 
@@ -20,4 +20,17 @@ pipeline {
             }
         }
     }
+    post{
+        always {
+            echo 'I will always say hello Again'
+            deleteDir()
+        }
+        success{
+            echo 'Hello Success'
+        }
+        failure{
+            echo 'Hello Failure'
+        }
+    }
+
 }
