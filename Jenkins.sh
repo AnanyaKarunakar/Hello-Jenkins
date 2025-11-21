@@ -7,7 +7,7 @@ echo "===== Updating System ====="
 sudo dnf update -y
 
 echo "===== Installing Java 11 ====="
-sudo dnf install java-11-openjdk-devel -y
+sudo dnf install java-17-openjdk-devel -y
 
 echo "===== Verifying Java Version ====="
 java -version
